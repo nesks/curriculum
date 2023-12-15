@@ -2,6 +2,8 @@ import InternetExplorer from './InternetExplorer';
 import Minesweeper from './Minesweeper';
 import ErrorBox from './ErrorBox';
 import MyComputer from './MyComputer';
+import MyPerson from './MyPerson';
+
 import Notepad from './Notepad';
 import Winamp from './Winamp';
 import Paint from './Paint';
@@ -17,6 +19,8 @@ import winamp from 'assets/windowsIcons/winamp.png';
 import paintLarge from 'assets/windowsIcons/680(32x32).png';
 import paint from 'assets/windowsIcons/680(16x16).png';
 
+
+
 const gen = () => {
   let id = -1;
   return () => {
@@ -27,71 +31,91 @@ const gen = () => {
 const genId = gen();
 const genIndex = gen();
 export const defaultAppState = [
+  // {
+  //   component: InternetExplorer,
+  //   header: {
+  //     title: 'Internet Explorer',
+  //     icon: iePaper,
+  //   },
+  //   defaultSize: {
+  //     width: 700,
+  //     height: 500,
+  //   },
+  //   defaultOffset: {
+  //     x: 130,
+  //     y: 20,
+  //   },
+  //   resizable: true,
+  //   minimized: false,
+  //   maximized: window.innerWidth < 800,
+  //   id: genId(),
+  //   zIndex: genIndex(),
+  // },
+  // {
+  //   component: Minesweeper,
+  //   header: {
+  //     title: 'Minesweeper',
+  //     icon: mine,
+  //   },
+  //   defaultSize: {
+  //     width: 0,
+  //     height: 0,
+  //   },
+  //   defaultOffset: {
+  //     x: 180,
+  //     y: 170,
+  //   },
+  //   resizable: false,
+  //   minimized: false,
+  //   maximized: false,
+  //   id: genId(),
+  //   zIndex: genIndex(),
+  // },
+  // {
+  //   component: Winamp,
+  //   header: {
+  //     title: 'Winamp',
+  //     icon: winamp,
+  //     invisible: true,
+  //   },
+  //   defaultSize: {
+  //     width: 0,
+  //     height: 0,
+  //   },
+  //   defaultOffset: {
+  //     x: 0,
+  //     y: 0,
+  //   },
+  //   resizable: false,
+  //   minimized: false,
+  //   maximized: false,
+  //   id: genId(),
+  //   zIndex: genIndex(),
+  // },
+  // {
+  //   component: MyComputer,
+  //   header: {
+  //     title: 'My Computer',
+  //     icon: computer,
+  //   },
+  //   defaultSize: {
+  //     width: 660,
+  //     height: 500,
+  //   },
+  //   defaultOffset: {
+  //     x: 250,
+  //     y: 40,
+  //   },
+  //   resizable: true,
+  //   minimized: false,
+  //   maximized: window.innerWidth < 800,
+  //   id: genId(),
+  //   zIndex: genIndex(),
+  // },
   {
-    component: InternetExplorer,
+    component: MyPerson,
     header: {
-      title: 'Internet Explorer',
-      icon: iePaper,
-    },
-    defaultSize: {
-      width: 700,
-      height: 500,
-    },
-    defaultOffset: {
-      x: 130,
-      y: 20,
-    },
-    resizable: true,
-    minimized: false,
-    maximized: window.innerWidth < 800,
-    id: genId(),
-    zIndex: genIndex(),
-  },
-  {
-    component: Minesweeper,
-    header: {
-      title: 'Minesweeper',
-      icon: mine,
-    },
-    defaultSize: {
-      width: 0,
-      height: 0,
-    },
-    defaultOffset: {
-      x: 180,
-      y: 170,
-    },
-    resizable: false,
-    minimized: false,
-    maximized: false,
-    id: genId(),
-    zIndex: genIndex(),
-  },
-  {
-    component: Winamp,
-    header: {
-      title: 'Winamp',
-      icon: winamp,
-      invisible: true,
-    },
-    defaultSize: {
-      width: 0,
-      height: 0,
-    },
-    defaultOffset: {
-      x: 0,
-      y: 0,
-    },
-    resizable: false,
-    minimized: false,
-    maximized: false,
-    id: genId(),
-    zIndex: genIndex(),
-  },
-  {
-    component: MyComputer,
-    header: {
-      title: 'My Computer',
+      title: 'Quem sou eu',
       icon: computer,
     },
     defaultSize: {
@@ -99,8 +123,8 @@ export const defaultAppState = [
       height: 500,
     },
     defaultOffset: {
-      x: 250,
-      y: 40,
+      x: 260,
+      y: 50,
     },
     resizable: true,
     minimized: false,
@@ -151,6 +175,13 @@ export const defaultIconState = [
     icon: paintLarge,
     title: 'Paint',
     component: Paint,
+    isFocus: false,
+  },
+  {
+    id: 6,
+    icon: computerLarge,
+    title: 'Quem sou eu',
+    component: MyPerson,
     isFocus: false,
   },
 ];
@@ -215,6 +246,25 @@ export const appSettings = {
     maximized: false,
     multiInstance: true,
   },
+  'Quem sou eu': {
+    header: {
+      icon: computer,
+      title: 'Quem sou eu',
+    },
+    component: MyPerson,
+    defaultSize: {
+      width: 660,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 290,
+      y: 50,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: false,
+  },
   'My Computer': {
     header: {
       icon: computer,
@@ -230,7 +280,7 @@ export const appSettings = {
       y: 50,
     },
     resizable: true,
-    minimized: false,
+    minimized: true,
     maximized: window.innerWidth < 800,
     multiInstance: false,
   },
@@ -249,7 +299,7 @@ export const appSettings = {
       y: 60,
     },
     resizable: true,
-    minimized: false,
+    minimized: true,
     maximized: window.innerWidth < 800,
     multiInstance: true,
   },
@@ -294,4 +344,4 @@ export const appSettings = {
   },
 };
 
-export { InternetExplorer, Minesweeper, ErrorBox, MyComputer, Notepad, Winamp };
+export { InternetExplorer, Minesweeper, ErrorBox, MyComputer,MyPerson, Notepad, Winamp };
