@@ -64,7 +64,7 @@ const Menu = ({ mode, onClose, onClickButton }) => {
     );
   }
   return (
-    <div className="modal">
+    <div className="modalLogOff">
       <header className="header">
         <span className="header__text">Log Off Windows</span>
         <img src={windowsLogo} alt="" className="header__img" />
@@ -110,7 +110,7 @@ const StyledContainer = styled(Container)`
   bottom: 0;
   display: flex;
   justify-content: center;
-  .modal {
+  .modalLogOff {
     margin-top: 30vh;
     width: 300px;
     height: 190px;

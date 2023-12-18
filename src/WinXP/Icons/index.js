@@ -15,6 +15,9 @@ function Icons({
     if (iconsRect.find(r => r.id === rect.id)) return;
     setIconsRect(iconsRect => [...iconsRect, rect]);
   }
+  const handleDoubleClick = (event, eventName) => {
+    onDoubleClick(event, eventName);
+  };
   useEffect(() => {
     if (!selecting) return;
     const sx = Math.min(selecting.x, mouse.docX);
@@ -37,7 +40,7 @@ function Icons({
           {...icon}
           displayFocus={displayFocus}
           onMouseDown={onMouseDown}
-          onDoubleClick={onDoubleClick}
+          onDoubleClick={(event) => handleDoubleClick(event, icon.title)}
           measure={measure}
         />
       ))}
@@ -91,11 +94,22 @@ const IconsContainer = styled.div`
   position: absolute;
   margin-top: 40px;
   margin-left: 40px;
-`;
+  padding-bottom: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Mantenha a direção como linha para layout em linha */
+  flex-wrap: wrap; /* Permite que os ícones se movam para a próxima "linha" */
+  justify-content: flex-start; /* Alinhe os ícones no início da linha */
+  align-content: flex-start; /* Alinhe os ícones no início da coluna */
+  gap: 20px; /* Ajuste conforme necessário */
+  
+  `;
+
 
 const StyledIcon = styled(Icon)`
   width: 70px;
   margin-bottom: 30px;
+  break-inside: avoid;
   display: flex;
   flex-direction: column;
   align-items: center;

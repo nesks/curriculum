@@ -4,6 +4,7 @@ import ErrorBox from './ErrorBox';
 import MyComputer from './MyComputer';
 import MyPerson from './MyPerson';
 import InternetCamp from './InternetCamp';
+import BlueError from './BlueError';
 
 
 import Notepad from './Notepad';
@@ -12,6 +13,7 @@ import Paint from './Paint';
 import iePaper from 'assets/windowsIcons/ie-paper.png';
 import ie from 'assets/windowsIcons/ie.png';
 import camp from 'assets/windowsIcons/camp.png';
+import money from 'assets/money.png';
 import mine from 'assets/minesweeper/mine-icon.png';
 import error from 'assets/windowsIcons/897(16x16).png';
 import computer from 'assets/windowsIcons/676(16x16).png';
@@ -74,27 +76,27 @@ export const defaultAppState = [
   //   id: genId(),
   //   zIndex: genIndex(),
   // },
-  // {
-  //   component: Winamp,
-  //   header: {
-  //     title: 'Winamp',
-  //     icon: winamp,
-  //     invisible: true,
-  //   },
-  //   defaultSize: {
-  //     width: 0,
-  //     height: 0,
-  //   },
-  //   defaultOffset: {
-  //     x: 0,
-  //     y: 0,
-  //   },
-  //   resizable: false,
-  //   minimized: false,
-  //   maximized: false,
-  //   id: genId(),
-  //   zIndex: genIndex(),
-  // },
+  {
+    component: Winamp,
+    header: {
+      title: 'Winamp',
+      icon: winamp,
+      invisible: true,
+    },
+    defaultSize: {
+      width: 0,
+      height: 0,
+    },
+    defaultOffset: {
+      x: 0,
+      y: 0,
+    },
+    resizable: false,
+    minimized: true,
+    maximized: false,
+    id: genId(),
+    zIndex: genIndex(),
+  },
   // {
   //   component: MyComputer,
   //   header: {
@@ -193,6 +195,13 @@ export const defaultIconState = [
     icon: camp,
     title: 'Camp Tecnologia',
     component: InternetCamp,
+    isFocus: false,
+  },
+  {
+    id: 8,
+    icon: money,
+    title: 'Pretensão Salarial',
+    component: BlueError,
     isFocus: false,
   },
 ];
@@ -372,6 +381,27 @@ export const appSettings = {
     maximized: window.innerWidth < 800,
     multiInstance: true,
   },
+  BlueError: {
+    header: {
+      icon: error,
+      title: 'C:\\',
+      buttons: ['close'],
+      noFooterWindow: true,
+    },
+    component: BlueError,
+    defaultSize: {
+      width: 380,
+      height: 0,
+    },
+    defaultOffset: {
+      x: window.innerWidth / 2 - 190,
+      y: window.innerHeight / 2 - 60,
+    },
+    resizable: false,
+    minimized: false,
+    maximized: false,
+    multiInstance: true,
+  },
 };
 
-export { InternetExplorer, Minesweeper, ErrorBox, MyComputer,MyPerson, Notepad, Winamp, InternetCamp};
+export { InternetExplorer, Minesweeper, ErrorBox, BlueError, MyComputer,MyPerson, Notepad, Winamp, InternetCamp};

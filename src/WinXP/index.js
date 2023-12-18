@@ -15,9 +15,11 @@ import {
   END_SELECT,
   POWER_OFF,
   CANCEL_POWER_OFF,
+  BLUE_ERROR_OFF,
+  CANCEL_BLUE_ERROR_OFF
 } from './constants/actions';
-import { FOCUSING, POWER_STATE } from './constants';
-import { defaultIconState, defaultAppState, appSettings } from './apps';
+import { FOCUSING, POWER_STATE, BLUE_ERROR } from './constants';
+import { defaultIconState, defaultAppState, appSettings, BlueError } from './apps';
 import Modal from './Modal';
 import Footer from './Footer';
 import Windows from './Windows';
@@ -32,6 +34,7 @@ const initState = {
   icons: defaultIconState,
   selecting: false,
   powerState: POWER_STATE.START,
+  blueState: BLUE_ERROR.START,
 };
 const reducer = (state, action = { type: '' }) => {
   switch (action.type) {
@@ -169,6 +172,16 @@ const reducer = (state, action = { type: '' }) => {
         ...state,
         powerState: POWER_STATE.START,
       };
+      case BLUE_ERROR_OFF:
+        return {
+          ...state,
+          blueState: action.payload,
+        };
+      case CANCEL_BLUE_ERROR_OFF:
+        return {
+          ...state,
+          blueState: BLUE_ERROR.START,
+        };
     default:
       return state;
   }
@@ -215,11 +228,15 @@ function WinXP() {
   function onMouseDownIcon(id) {
     dispatch({ type: FOCUS_ICON, payload: id });
   }
-  function onDoubleClickIcon(component) {
+  function onDoubleClickIcon(component, eventName) {
     const appSetting = Object.values(appSettings).find(
       setting => setting.component === component,
     );
-    dispatch({ type: ADD_APP, payload: appSetting });
+    if(eventName == "Pretensão Salarial"){
+      dispatch({ type: BLUE_ERROR_OFF, payload: BLUE_ERROR.LOG_OFF });
+      return;
+    }
+   dispatch({ type: ADD_APP, payload: appSetting });
   }
   function getFocusedAppId() {
     if (state.focusing !== FOCUSING.WINDOW) return -1;
@@ -280,6 +297,11 @@ function WinXP() {
       payload: appSettings.Error,
     });
   }
+
+  function onCancelBlueError(){
+    dispatch({ type: CANCEL_BLUE_ERROR_OFF });
+  }
+
   function onModalClose() {
     dispatch({ type: CANCEL_POWER_OFF });
   }
@@ -290,10 +312,16 @@ function WinXP() {
       onMouseDown={onMouseDownDesktop}
       state={state.powerState}
     >
+      {state.blueState !== BLUE_ERROR.START && (
+        <BlueError
+          onClose={onCancelBlueError}
+          onClickButton={onCancelBlueError}
+        />
+      )}
       <Icons
         icons={state.icons}
         onMouseDown={onMouseDownIcon}
-        onDoubleClick={onDoubleClickIcon}
+        onDoubleClick={(event, eventName) => onDoubleClickIcon(event, eventName)}
         displayFocus={state.focusing === FOCUSING.ICON}
         appSettings={appSettings}
         mouse={mouse}
@@ -309,13 +337,14 @@ function WinXP() {
         onMaximize={onMaximizeWindow}
         focusedAppId={focusedAppId}
       />
+       {state.blueState === BLUE_ERROR.START && (
       <Footer
         apps={state.apps}
         onMouseDownApp={onMouseDownFooterApp}
         focusedAppId={focusedAppId}
         onMouseDown={onMouseDownFooter}
         onClickMenuItem={onClickMenuItem}
-      />
+      />)}
       {state.powerState !== POWER_STATE.START && (
         <Modal
           onClose={onModalClose}
@@ -342,6 +371,9 @@ const animation = {
   [POWER_STATE.START]: '',
   [POWER_STATE.TURN_OFF]: powerOffAnimation,
   [POWER_STATE.LOG_OFF]: powerOffAnimation,
+  [BLUE_ERROR.START]: '',
+  [BLUE_ERROR.LOG_OFF]: powerOffAnimation,
+
 };
 
 const Container = styled.div`

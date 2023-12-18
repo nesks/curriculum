@@ -27,11 +27,11 @@ function Balloon({ startAfter = 3000, duration = 15000 }) {
           <div className="balloon__header">
             <img className="balloon__header__img" src={risk} alt="risk" />
             <span className="balloon__header__text">
-            Situação:
+            {/* Situação: */}
             </span>
           </div>
           <p className="balloon__text__first">
-          Atualmente empregado como CLT em busca de projetos como freelancer.
+          Em busca de projetos como freelancer.
           </p>
           <p className="balloon__text__second">
             Entre em contato!
