@@ -3,12 +3,15 @@ import Minesweeper from './Minesweeper';
 import ErrorBox from './ErrorBox';
 import MyComputer from './MyComputer';
 import MyPerson from './MyPerson';
+import InternetCamp from './InternetCamp';
+
 
 import Notepad from './Notepad';
 import Winamp from './Winamp';
 import Paint from './Paint';
 import iePaper from 'assets/windowsIcons/ie-paper.png';
 import ie from 'assets/windowsIcons/ie.png';
+import camp from 'assets/windowsIcons/camp.png';
 import mine from 'assets/minesweeper/mine-icon.png';
 import error from 'assets/windowsIcons/897(16x16).png';
 import computer from 'assets/windowsIcons/676(16x16).png';
@@ -184,6 +187,14 @@ export const defaultIconState = [
     component: MyPerson,
     isFocus: false,
   },
+  ,
+  {
+    id: 7,
+    icon: camp,
+    title: 'Camp Tecnologia',
+    component: InternetCamp,
+    isFocus: false,
+  },
 ];
 
 export const appSettings = {
@@ -342,6 +353,25 @@ export const appSettings = {
     maximized: window.innerWidth < 800,
     multiInstance: true,
   },
+  'Camp Tecnologia': {
+    header: {
+      icon: iePaper,
+      title: 'Camp Tecnologia',
+    },
+    component: InternetCamp,
+    defaultSize: {
+      width: 700,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 160,
+      y: 50,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
 };
 
-export { InternetExplorer, Minesweeper, ErrorBox, MyComputer,MyPerson, Notepad, Winamp };
+export { InternetExplorer, Minesweeper, ErrorBox, MyComputer,MyPerson, Notepad, Winamp, InternetCamp};

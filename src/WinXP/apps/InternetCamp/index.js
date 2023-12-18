@@ -137,7 +137,7 @@ function InternetExplorer({ onClose }) {
         <div className="ie__address_bar__content">
           <img src={ie} alt="ie" className="ie__address_bar__content__img" />
           <div className="ie__address_bar__content__text">
-            {`https://www.google.com.tw${
+            {`https://www.google.com.br${
               state.route === 'search'
                 ? `/search?q=${encodeURIComponent(state.query)}`
                 : ''
@@ -164,14 +164,14 @@ function InternetExplorer({ onClose }) {
         </div>
       </section>
       <div className="ie__content">
-        <div className="ie__content__inner">
+        {/* <div className="ie__content__inner">
           <Google
             route={state.route}
             query={state.query}
             onSearch={onSearch}
             goMain={goMain}
           />
-        </div>
+        </div> */}
       </div>
       <footer className="ie__footer">
         <div className="ie__footer__status">
