@@ -8,3 +8,8 @@ export const POWER_STATE = {
   LOG_OFF: 'LOG_OFF',
   TURN_OFF: 'TURN_OFF',
 };
+
+export const BLUE_ERROR = {
+  START: 'START',
+  LOG_OFF: 'LOG_OFF'
+};

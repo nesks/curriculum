@@ -9,4 +9,6 @@ export const FOCUS_DESKTOP = 'FOCUS_DESKTOP';
 export const START_SELECT = 'START_SELECT';
 export const END_SELECT = 'END_SELECT';
 export const POWER_OFF = 'POWER_OFF';
+export const BLUE_ERROR_OFF = 'BLUE_ERROR_OFF';
+export const CANCEL_BLUE_ERROR_OFF = 'CANCEL_BLUE_ERROR_OFF';
 export const CANCEL_POWER_OFF = 'CANCEL_POWER_OFF';
