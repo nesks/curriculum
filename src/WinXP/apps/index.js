@@ -4,6 +4,7 @@ import ErrorBox from './ErrorBox';
 import MyComputer from './MyComputer';
 import MyPerson from './MyPerson';
 import InternetCamp from './InternetCamp';
+import InternetYoutube from './InternetYoutube';
 import BlueError from './BlueError';
 
 
@@ -204,6 +205,13 @@ export const defaultIconState = [
     component: BlueError,
     isFocus: false,
   },
+  {
+    id: 9,
+    icon: ie,
+    title: 'Apresentação',
+    component: InternetYoutube,
+    isFocus: false,
+  },
 ];
 
 export const appSettings = {
@@ -356,6 +364,25 @@ export const appSettings = {
     defaultOffset: {
       x: 280,
       y: 70,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
+  'Youtube': {
+    header: {
+      icon: iePaper,
+      title: 'Youtube',
+    },
+    component: InternetYoutube,
+    defaultSize: {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    },
+    defaultOffset: {
+      x: 160,
+      y: 50,
     },
     resizable: true,
     minimized: false,
