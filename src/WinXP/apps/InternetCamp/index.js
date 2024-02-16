@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { WindowDropDowns, Google } from 'components';
 import dropDownData from './dropDownData';
+import Camp from './camp';
 import ie from 'assets/windowsIcons/ie-paper.png';
 import printer from 'assets/windowsIcons/17(32x32).png';
 import go from 'assets/windowsIcons/290.png';
@@ -164,6 +165,7 @@ function InternetExplorer({ onClose }) {
         </div>
       </section>
       <div className="ie__content">
+        <Camp/>
         {/* <div className="ie__content__inner">
           <Google
             route={state.route}
