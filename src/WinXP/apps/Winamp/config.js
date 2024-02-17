@@ -1,15 +1,119 @@
 // from Webamp demo
 
 const album = 'netBloc Vol. 24: tiuqottigeloot';
+import daydream from 'assets/sounds/music/ Daydream In Blue.mp3';
+import dance from 'assets/sounds/music/dance.mp3';
+import iloveu from 'assets/sounds/music/iloveu.mp3';
+import mrrobot from 'assets/sounds/music/mrrobot.mp3';
+import vessel from 'assets/sounds/music/Vessel.mp3';
+import world from 'assets/sounds/music/world.mp3';
+
 
 export const initialTracks = [
   {
-    url:
-      'https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/Diablo_Swing_Orchestra_-_01_-_Heroines.mp3',
+    url:daydream,
     duration: 322.612245,
     metaData: {
-      title: 'Heroines',
-      artist: 'Diablo Swing Orchestra',
+      title: 'Daydream In Blue',
+      artist: 'I monster',
+      album,
+    },
+  },
+  {
+    url:
+      mrrobot,
+    duration: 147.331429,
+    metaData: {
+      title: 'Mr Robot',
+      artist: '-',
+      album,
+    },
+  },
+
+
+  {
+    url:
+      vessel,
+    duration: 400.331429,
+    metaData: {
+      title: 'vessel',
+      artist: '-',
+      album,
+    },
+  },
+
+
+
+  {
+    url:
+      world,
+    duration: 299.331429,
+    metaData: {
+      title: 'World',
+      artist: '-',
+      album,
+    },
+  },
+  {
+    url:
+      dance,
+    duration: 314.331429,
+    metaData: {
+      title: 'Dance',
+      artist: '-',
+      album,
+    },
+  },
+  {
+    url:
+      iloveu,
+    duration: 342.331429,
+    metaData: {
+      title: 'iloveu',
+      artist: '-',
+      album,
+    },
+  },
+
+
+
+  {
+    url:
+      'https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/Nobara_Hayakawa_-_09_-_Trail.mp3',
+    duration: 204.042449,
+    metaData: {
+      title: 'Trail',
+      artist: 'Nobara Hayakawa',
+      album,
+    },
+  },
+  {
+    url:
+      'https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/Paper_Navy_-_10_-_Tongue_Tied.mp3',
+    duration: 201.116735,
+    metaData: {
+      title: 'Tongue Tied',
+      artist: 'Paper Navy',
+      album,
+    },
+  },
+  {
+    url:
+      'https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/60_Tigres_-_11_-_Garage.mp3',
+    duration: 245.394286,
+    metaData: {
+      title: 'Garage',
+      artist: '60 Tigres',
+      album,
+    },
+  },
+  {
+    url:
+      'https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/CM_aka_Creative_-_12_-_The_Cycle_Featuring_Mista_Mista.mp3',
+    duration: 221.44,
+    metaData: {
+      title: 'The Cycle (Featuring Mista Mista)',
+      artist: 'CM aka Creative',
       album,
     },
   },
@@ -70,56 +174,6 @@ export const initialTracks = [
     metaData: {
       title: 'Hola Hola Bossa Nova',
       artist: 'Juanitos',
-      album,
-    },
-  },
-  {
-    url:
-      'https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/Entertainment_for_the_Braindead_-_08_-_Resolutions_Chris_Summer_Remix.mp3',
-    duration: 314.331429,
-    metaData: {
-      title: 'Resolutions (Chris Summer Remix)',
-      artist: 'Entertainment for the Braindead',
-      album,
-    },
-  },
-  {
-    url:
-      'https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/Nobara_Hayakawa_-_09_-_Trail.mp3',
-    duration: 204.042449,
-    metaData: {
-      title: 'Trail',
-      artist: 'Nobara Hayakawa',
-      album,
-    },
-  },
-  {
-    url:
-      'https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/Paper_Navy_-_10_-_Tongue_Tied.mp3',
-    duration: 201.116735,
-    metaData: {
-      title: 'Tongue Tied',
-      artist: 'Paper Navy',
-      album,
-    },
-  },
-  {
-    url:
-      'https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/60_Tigres_-_11_-_Garage.mp3',
-    duration: 245.394286,
-    metaData: {
-      title: 'Garage',
-      artist: '60 Tigres',
-      album,
-    },
-  },
-  {
-    url:
-      'https://raw.githubusercontent.com/captbaritone/webamp-music/4b556fbf/CM_aka_Creative_-_12_-_The_Cycle_Featuring_Mista_Mista.mp3',
-    duration: 221.44,
-    metaData: {
-      title: 'The Cycle (Featuring Mista Mista)',
-      artist: 'CM aka Creative',
       album,
     },
   },

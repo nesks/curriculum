@@ -16,6 +16,7 @@ function Winamp({ onClose, onMinimize }) {
     webamp.current.renderWhenReady(target).then(() => {
       target.appendChild(document.querySelector('#webamp'));
     });
+
     return () => {
       webamp.current.dispose();
       webamp.current = null;
@@ -23,10 +24,12 @@ function Winamp({ onClose, onMinimize }) {
   }, []);
   useEffect(() => {
     if (webamp.current) {
+      webamp.current.play();
+      console.log("🚀 ~ useEffect ~ webamp.current:", webamp.current)
       webamp.current.onClose(onClose);
       webamp.current.onMinimize(onMinimize);
     }
-  });
+  },[]);
   return (
     <div
       style={{ position: 'fixed', left: 0, top: 0, right: 0, bottom: 0 }}
