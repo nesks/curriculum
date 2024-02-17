@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
+import Youtube from './Youtube2';
 import { WindowDropDowns, Google } from 'components';
 import dropDownData from './dropDownData';
 import ie from 'assets/windowsIcons/ie-paper.png';
@@ -164,8 +164,7 @@ function InternetExplorer({ onClose }) {
         </div>
       </section>
       <div className="ie__content">
-
-
+        <Youtube/>
       </div>
       <footer className="ie__footer">
         <div className="ie__footer__status">
@@ -389,7 +388,7 @@ const Div = styled.div`
     overflow: auto;
     padding-left: 1px;
     border-left: 1px solid #6f6f6f;
-    background-color: #f1f1f1;
+    background-color: white;
     position: relative;
   }
   .ie__content__inner {

@@ -42,17 +42,18 @@ function Error({ onClose, onClickButton }) {
             <Title className='d-inline'>Windows</Title>
           </div>
         <p>
-        A problem has been detect and Windows has been shut down to prevent damage<br/>
-        to your computer.<br/>
-        If this is the first time you' ve seen this Stop error screen,<br/>
-        restart your computer. If this screen appears again, follow these steps:<br/>
-        Disable or uninstall any anti-virus, disk defragmentation<br/>
-        or backup utilities. Check your hard drive configuration,<br/>
-        and check for any updated drivers. Run CHKDSK /F to check<br/>
-        for hard drive corruption, and then restart your computer.<br/><br/>
-        Technical information:<br/><br/>
-        *** WHATSAPP: +55 (31) 994831043<br/>
+      
+Falha ao informar o salário devido a negociações variáveis conforme a vaga ou projeto. <br/>
+ Se esta tela aparecer novamente, siga estas etapas:<br/>
+Envie um email com  a vaga do processo seletivo com as informações necessarias<br/>
+ou entre em contato pelo Whatsapp!<br/>
+Caso as outras opções não funcione, ligue para o telefone informado<br/>
+que nosso suporte técnico responderá suas duvidas!<br/><br/>
+      Informações técnicas:<br/><br/>
         *** EMAIL: dev.felipesnunes@gmail.com<br/>
+        *** WHATSAPP: +55 (31) 994831043<br/>
+        *** CELULAR: +55 (31) 994831043<br/>
+
         </p>      
         </div>
   </Container>

@@ -381,8 +381,8 @@ export const appSettings = {
       height: window.innerHeight,
     },
     defaultOffset: {
-      x: 160,
-      y: 50,
+      x: 0,
+      y: 0,
     },
     resizable: true,
     minimized: false,
