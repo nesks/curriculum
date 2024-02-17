@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import footer1 from 'assets/youtube/footer1.png';
-import footer2 from 'assets/youtube/footer2.png';
-import lupa from 'assets/youtube/lupa.png';
-import logo from 'assets/youtube/logo.png';
 
 
 
