@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
+import Youtube from './Youtube2';
 import { WindowDropDowns, Google } from 'components';
 import dropDownData from './dropDownData';
-import Camp from './camp';
 import ie from 'assets/windowsIcons/ie-paper.png';
 import printer from 'assets/windowsIcons/17(32x32).png';
 import go from 'assets/windowsIcons/290.png';
@@ -138,7 +137,7 @@ function InternetExplorer({ onClose }) {
         <div className="ie__address_bar__content">
           <img src={ie} alt="ie" className="ie__address_bar__content__img" />
           <div className="ie__address_bar__content__text">
-            {`https://www.google.com.br${
+            {`https://www.youtube.com.br${
               state.route === 'search'
                 ? `/search?q=${encodeURIComponent(state.query)}`
                 : ''
@@ -165,15 +164,7 @@ function InternetExplorer({ onClose }) {
         </div>
       </section>
       <div className="ie__content">
-        <Camp/>
-        {/* <div className="ie__content__inner">
-          <Google
-            route={state.route}
-            query={state.query}
-            onSearch={onSearch}
-            goMain={goMain}
-          />
-        </div> */}
+        <Youtube/>
       </div>
       <footer className="ie__footer">
         <div className="ie__footer__status">
@@ -397,7 +388,7 @@ const Div = styled.div`
     overflow: auto;
     padding-left: 1px;
     border-left: 1px solid #6f6f6f;
-    background-color: #f1f1f1;
+    background-color: white;
     position: relative;
   }
   .ie__content__inner {
@@ -407,6 +398,8 @@ const Div = styled.div`
     width: 100%;
     height: 100%;
   }
+
+
   .ie__footer {
     height: 20px;
     border-top: 1px solid transparent;
@@ -468,6 +461,7 @@ const Div = styled.div`
         10px -6px rgba(255, 255, 255, 1);
     }
   }
+  
 `;
 
 export default InternetExplorer;
