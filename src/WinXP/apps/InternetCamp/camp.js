@@ -1,23 +1,25 @@
-import React, { useState } from 'react';
-import { WindowDropDowns, Google } from 'components';
-
-
+import React, { useState, useRef } from 'react';
+import Header from './components/Header.js';
+import About from './components/About.js';
 
 const Camp = () => {
-    const [state, setState] = useState({
-        route: 'main',
-        query: '',
+  const aboutRef = useRef(null);
+
+  const scrollToAbout = () => {
+    if (aboutRef.current) {
+      window.scrollTo({
+        top: aboutRef.current.offsetTop,
+        behavior: 'smooth'
       });
+    }
+  };
 
-    return(
-    <div className="ie__content__inner">
-          <Google
-            route={state.route}
-            query={state.query}
-          />
-        </div> 
-    );
+  return (
+    <div>
+      <Header />
+      <About />
+    </div>
+  );
 };
-
 
 export default Camp;

@@ -24,8 +24,7 @@ function Winamp({ onClose, onMinimize }) {
   }, []);
   useEffect(() => {
     if (webamp.current) {
-      webamp.current.play();
-      console.log("🚀 ~ useEffect ~ webamp.current:", webamp.current)
+      // webamp.current.play();
       webamp.current.onClose(onClose);
       webamp.current.onMinimize(onMinimize);
     }
