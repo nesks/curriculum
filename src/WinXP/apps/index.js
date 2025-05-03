@@ -21,7 +21,7 @@ import computer from 'assets/windowsIcons/676(16x16).png';
 import computerLarge from 'assets/windowsIcons/676(32x32).png';
 import notepad from 'assets/windowsIcons/327(16x16).png';
 import notepadLarge from 'assets/windowsIcons/327(32x32).png';
-import winamp from 'assets/windowsIcons/winamp.png';
+import winampIcon from 'assets/windowsIcons/winamp.png';
 import paintLarge from 'assets/windowsIcons/680(32x32).png';
 import paint from 'assets/windowsIcons/680(16x16).png';
 
@@ -121,7 +121,7 @@ export const defaultAppState = [
     component: Winamp,
     header: {
       title: 'Winamp',
-      icon: winamp,
+      icon: winampIcon,
       invisible: true,
     },
     defaultSize: {
@@ -333,7 +333,7 @@ export const appSettings = {
   },
   Winamp: {
     header: {
-      icon: winamp,
+      icon: winampIcon,
       title: 'Winamp',
       invisible: true,
     },
@@ -346,7 +346,7 @@ export const appSettings = {
       x: 0,
       y: 0,
     },
-    resizable: true,
+    resizable: false,
     minimized: false,
     maximized: false,
     multiInstance: false,
