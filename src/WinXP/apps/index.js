@@ -5,6 +5,7 @@ import MyComputer from './MyComputer';
 import MyPerson from './MyPerson';
 import InternetCamp from './InternetCamp';
 import InternetYoutube from './InternetYoutube';
+import InternetShirt from './InternetShirt';
 import BlueError from './BlueError';
 
 
@@ -200,13 +201,20 @@ export const defaultIconState = [
   },
   {
     id: 8,
+    icon: iePaper,
+    title: 'Personalize sua camiseta',
+    component: InternetShirt,
+    isFocus: false,
+  },
+  {
+    id: 9,
     icon: money,
     title: 'Pretensão Salarial',
     component: BlueError,
     isFocus: false,
   },
   {
-    id: 9,
+    id: 10,
     icon: "https://s.ytimg.com/yts/img/favicon-vfl8qSV2F.ico",
     title: 'História',
     component: InternetYoutube,
@@ -408,6 +416,25 @@ export const appSettings = {
     maximized: window.innerWidth < 800,
     multiInstance: true,
   },
+  'Personalize sua camiseta': {
+    header: {
+      icon: iePaper,
+      title: 'Personalize sua camiseta',
+    },
+    component: InternetShirt,
+    defaultSize: {
+      width: window.innerWidth,
+      height:  window.innerHeight,
+    },
+    defaultOffset: {
+      x: 0,
+      y: 0,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
   BlueError: {
     header: {
       icon: error,
@@ -431,4 +458,4 @@ export const appSettings = {
   },
 };
 
-export { InternetExplorer, Minesweeper, ErrorBox, BlueError, MyComputer,MyPerson, Notepad, Winamp, InternetCamp};
+export { InternetExplorer, Minesweeper, ErrorBox, BlueError, MyComputer,MyPerson, Notepad, Winamp, InternetCamp, InternetShirt};
