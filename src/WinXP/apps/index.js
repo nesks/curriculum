@@ -230,13 +230,13 @@ export const defaultIconState = [
     component: BlueError,
     isFocus: false,
   },
-  {
-    id: 10,
-    icon: "https://s.ytimg.com/yts/img/favicon-vfl8qSV2F.ico",
-    title: 'História',
-    component: InternetYoutube,
-    isFocus: false,
-  },
+  // {
+  //   id: 10,
+  //   icon: "https://s.ytimg.com/yts/img/favicon-vfl8qSV2F.ico",
+  //   title: 'História',
+  //   component: InternetYoutube,
+  //   isFocus: false,
+  // },
 ];
 
 export const appSettings = {
