@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+
 import { WindowDropDowns } from 'components';
 import dropDownData from './dropDownData';
+import Shirt from './shirt';
 import ie from 'assets/windowsIcons/ie-paper.png';
 import printer from 'assets/windowsIcons/17(32x32).png';
 import go from 'assets/windowsIcons/290.png';
@@ -22,34 +24,9 @@ import windows from 'assets/windowsIcons/windows.png';
 import dropdown from 'assets/windowsIcons/dropdown.png';
 
 function InternetExplorer({ onClose }) {
-  const [state, setState] = useState({
-    route: 'main',
-    query: '',
-  });
-  function onSearch(str) {
-    if (str.length) {
-      setState({
-        route: 'search',
-        query: str,
-      });
-    }
-  }
-  function goMain() {
-    setState({
-      route: 'main',
-      query: '',
-    });
-  }
   function onClickOptionItem(item) {
-    switch (item) {
-      case 'Close':
-        onClose();
-        break;
-      case 'Home Page':
-      case 'Back':
-        goMain();
-        break;
-      default:
+    if (item === 'Close') {
+      onClose();
     }
   }
   return (
@@ -65,12 +42,7 @@ function InternetExplorer({ onClose }) {
         <img className="ie__windows-logo" src={windows} alt="windows" />
       </section>
       <section className="ie__function_bar">
-        <div
-          onClick={goMain}
-          className={`ie__function_bar__button${
-            state.route === 'main' ? '--disable' : ''
-          }`}
-        >
+        <div className="ie__function_bar__button--disable">
           <img className="ie__function_bar__icon" src={back} alt="" />
           <span className="ie__function_bar__text">Back</span>
           <div className="ie__function_bar__arrow" />
@@ -89,7 +61,7 @@ function InternetExplorer({ onClose }) {
             alt=""
           />
         </div>
-        <div className="ie__function_bar__button" onClick={goMain}>
+        <div className="ie__function_bar__button">
           <img className="ie__function_bar__icon--margin-1" src={home} alt="" />
         </div>
         <div className="ie__function_bar__separate" />
@@ -136,11 +108,7 @@ function InternetExplorer({ onClose }) {
         <div className="ie__address_bar__content">
           <img src={ie} alt="ie" className="ie__address_bar__content__img" />
           <div className="ie__address_bar__content__text">
-            {`https://shirt-creater.vercel.app/${
-              state.route === 'search'
-                ? `/search?q=${encodeURIComponent(state.query)}`
-                : ''
-            }`}
+            {`https://felipe.shirt-creater.vercel.app/portfolio`}
           </div>
           <img
             src={dropdown}
@@ -163,15 +131,7 @@ function InternetExplorer({ onClose }) {
         </div>
       </section>
       <div className="ie__content">
-      <div style={{ width: '100%', height: '100%' }}>
-      <iframe
-        src="https://shirt-creater.vercel.app/"
-        width="100%"
-        height="100%"
-        allowFullScreen
-        title="Personalize sua camisa"
-      ></iframe>
-    </div>
+        <Shirt />
       </div>
       <footer className="ie__footer">
         <div className="ie__footer__status">
@@ -395,7 +355,7 @@ const Div = styled.div`
     overflow: auto;
     padding-left: 1px;
     border-left: 1px solid #6f6f6f;
-    background-color: white;
+    background-color: #f1f1f1;
     position: relative;
   }
   .ie__content__inner {
@@ -405,8 +365,6 @@ const Div = styled.div`
     width: 100%;
     height: 100%;
   }
-
-
   .ie__footer {
     height: 20px;
     border-top: 1px solid transparent;
@@ -468,7 +426,6 @@ const Div = styled.div`
         10px -6px rgba(255, 255, 255, 1);
     }
   }
-  
 `;
 
 export default InternetExplorer;
