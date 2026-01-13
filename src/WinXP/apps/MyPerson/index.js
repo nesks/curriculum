@@ -120,8 +120,12 @@ function MyComputer({ onClose }) {
                     
                     </div>
 
-                    <div className="col-12 col-sm-7 d-flex text-left p-3">
-                            <p> Me chamo Felipe S. Nunes, sou formado em Sistemas de Informação e atuo como desenvolvedor pleno. Estou em constante busca por aprimoramento, especialmente em Vue3Js e Laravel, além de me aventurar no universo do desenvolvimento Mobile e Cloud Computing. Com experiência como Full-stack Developer na Camp Tecnologia, desde outubro/2021 onde me encontro até o momento atual, acumulei conhecimentos em desenvolvimento de sistemas, frameworks como Laravel e VueJs e ionic no mobile com Angular, análise de requisitos, metodologia ágil e API REST. Meu objetivo é dominar o desenvolvimento mobile, cloud computing e as tecnologias React JS, Node JS e React Native, sempre em busca de novos desafios e aprendizados. </p>
+                    <div className="col-12 col-sm-7 text-left p-3" style={{display: 'flex', flexDirection: 'column'}}>
+                      <p><strong>Felipe Sousa Nunes</strong> | Desenvolvedor Full-Stack</p>
+                      <p style={{marginTop: '10px'}}>Desenvolvedor com formação em Sistemas de Informação e experiência sólida em projetos de alta complexidade. Atuo como Full-Stack Developer na <strong>Camp Tecnologia</strong> desde outubro/2021, onde desenvolvo e mantenho o aplicativo Acampa (4.000+ usuários ativos diários), realizando deploys para iOS e Android.</p>
+                      <p style={{marginTop: '10px'}}>Também desenvolvo <strong>soluções com Inteligência Artificial</strong>, integrando APIs de LLMs (OpenAI, DALL-E) e serviços de IA generativa em aplicações reais. Criei o <strong>Legado Vivo</strong>, um projeto end-to-end em produção na App Store, demonstrando capacidade de conduzir produtos do conceito à operação.</p>
+                      <p style={{marginTop: '10px'}}><strong>Stack principal:</strong> Laravel, Vue.js, React Native, Node.js, TypeScript, PostgreSQL, Docker, CI/CD.</p>
+                      <p style={{marginTop: '10px'}}><strong>Diferenciais:</strong> Arquitetura de sistemas, infraestrutura cloud, integrações com IA e visão de produto.</p>
                     </div>  
                   </div>
             </div>

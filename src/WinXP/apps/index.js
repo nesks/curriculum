@@ -6,6 +6,8 @@ import MyPerson from './MyPerson';
 import InternetCamp from './InternetCamp';
 import InternetYoutube from './InternetYoutube';
 import InternetShirt from './InternetShirt';
+import InternetLegadoVivo from './InternetLegadoVivo';
+import InternetAvalpsico from './InternetAvalpsico';
 import BlueError from './BlueError';
 
 
@@ -15,6 +17,8 @@ import Paint from './Paint';
 import iePaper from 'assets/windowsIcons/ie-paper.png';
 import ie from 'assets/windowsIcons/ie.png';
 import camp from 'assets/windowsIcons/camp.png';
+import legadovivo from 'assets/windowsIcons/legadovivo.png';
+import avalpsico from 'assets/windowsIcons/avalpsico.png';
 import money from 'assets/money.png';
 import mine from 'assets/minesweeper/mine-icon.png';
 import error from 'assets/windowsIcons/897(16x16).png';
@@ -191,12 +195,25 @@ export const defaultIconState = [
     component: MyPerson,
     isFocus: false,
   },
-  ,
+  {
+    id: 11,
+    icon: legadovivo,
+    title: 'Legado Vivo',
+    component: InternetLegadoVivo,
+    isFocus: false,
+  },
   {
     id: 7,
     icon: camp,
     title: 'Camp Tecnologia',
     component: InternetCamp,
+    isFocus: false,
+  },
+  {
+    id: 12,
+    icon: avalpsico,
+    title: 'AvalPsico',
+    component: InternetAvalpsico,
     isFocus: false,
   },
   {
@@ -435,6 +452,44 @@ export const appSettings = {
     maximized: window.innerWidth < 800,
     multiInstance: true,
   },
+  'Legado Vivo': {
+    header: {
+      icon: iePaper,
+      title: 'Legado Vivo',
+    },
+    component: InternetLegadoVivo,
+    defaultSize: {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    },
+    defaultOffset: {
+      x: 0,
+      y: 0,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
+  'AvalPsico': {
+    header: {
+      icon: iePaper,
+      title: 'AvalPsico',
+    },
+    component: InternetAvalpsico,
+    defaultSize: {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    },
+    defaultOffset: {
+      x: 0,
+      y: 0,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
   BlueError: {
     header: {
       icon: error,
@@ -458,4 +513,4 @@ export const appSettings = {
   },
 };
 
-export { InternetExplorer, Minesweeper, ErrorBox, BlueError, MyComputer,MyPerson, Notepad, Winamp, InternetCamp, InternetShirt};
+export { InternetExplorer, Minesweeper, ErrorBox, BlueError, MyComputer, MyPerson, Notepad, Winamp, InternetCamp, InternetShirt, InternetLegadoVivo, InternetAvalpsico };
