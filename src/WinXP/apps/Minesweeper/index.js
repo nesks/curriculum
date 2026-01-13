@@ -211,7 +211,7 @@ function MineSweeper({ defaultDifficulty, onClose }) {
     if (state.status === 'started' && checkRemains() === 0) {
       dispatch({ type: 'WON' });
     }
-  });
+  }, [state.status, state.ceils]);
   function onReset(difficulty) {
     dispatch({ type: 'CLEAR_MAP', payload: difficulty });
   }

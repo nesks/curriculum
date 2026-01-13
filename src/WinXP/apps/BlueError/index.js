@@ -15,14 +15,12 @@ function Error({ onClose, onClickButton }) {
 
         audio.addEventListener('ended', () => {
           setAudioPlayed(true);
-
-          // Restante do código que você quer executar após a reprodução do áudio
-          console.log('Som reproduzido com sucesso');
         });
 
         await audio.play();
       } catch (e) {
-        console.log(e);
+        // Se áudio falhar (ex: autoplay bloqueado), renderizar componente mesmo assim
+        setAudioPlayed(true);
       }
     };
 

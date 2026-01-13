@@ -70,10 +70,6 @@ const reducer = (state, action = { type: '' }) => {
         focusing: FOCUSING.WINDOW,
       };
     case DEL_APP:
-      console.log("🚀 ~ reducer ~ state:", state)
-      console.log("🚀 ~ reducer ~ action:", action)
-      const resposta = state.apps.filter(app => app.id !== action.payload);
-      console.log("🚀 ~ reducer ~ resposta:", resposta)
       if (state.focusing !== FOCUSING.WINDOW) return state;
       return {
         ...state,
@@ -223,7 +219,6 @@ function WinXP() {
     [focusedAppId],
   );
   function onMouseDownFooterApp(id) {
-    console.log("🚀 ~ onMouseDownFooterApp ~ onMouseDownFooterApp:", onMouseDownFooterApp)
     if (focusedAppId === id) {
       dispatch({ type: MINIMIZE_APP, payload: id });
     } else {
@@ -231,15 +226,13 @@ function WinXP() {
     }
   }
   function onMouseDownIcon(id) {
-    console.log("🚀 ~ onMouseDownIcon ~ onMouseDownIcon:", onMouseDownIcon)
     dispatch({ type: FOCUS_ICON, payload: id });
   }
   function onDoubleClickIcon(component, eventName) {
-    console.log("🚀 ~ onDoubleClickIcon ~ onDoubleClickIcon:", onDoubleClickIcon)
     const appSetting = Object.values(appSettings).find(
       setting => setting.component === component,
     );
-    if(eventName == "Pretensão Salarial"){
+    if(eventName === "Pretensão Salarial"){
       dispatch({ type: BLUE_ERROR_OFF, payload: BLUE_ERROR.LOG_OFF });
       return;
     }
@@ -253,7 +246,6 @@ function WinXP() {
     return focusedApp ? focusedApp.id : -1;
   }
   function onMouseDownFooter() {
-    console.log("🚀 ~ onMouseDownFooter ~ onMouseDownFooter:", onMouseDownFooter)
     dispatch({ type: FOCUS_DESKTOP });
   }
   function onClickMenuItem(o) {

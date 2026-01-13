@@ -29,16 +29,16 @@ export default function Notepad({ onClose }) {
     // handle tabs in text area
     if (e.which === 9) {
       e.preventDefault();
-      e.persist();
-      var start = e.target.selectionStart;
-      var end = e.target.selectionEnd;
+      const target = e.target;
+      const start = target.selectionStart;
+      const end = target.selectionEnd;
       setDocText(`${docText.substring(0, start)}\t${docText.substring(end)}`);
 
       // asynchronously update textarea selection to include tab
       // workaround due to https://github.com/facebook/react/issues/14174
       requestAnimationFrame(() => {
-        e.target.selectionStart = start + 1;
-        e.target.selectionEnd = start + 1;
+        target.selectionStart = start + 1;
+        target.selectionEnd = start + 1;
       });
     }
   }

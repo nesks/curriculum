@@ -3,6 +3,7 @@ import useWindowSize from 'react-use/lib/useWindowSize';
 import styled from 'styled-components';
 
 import { useElementResize } from 'hooks';
+import { ErrorBoundary } from 'components';
 import HeaderButtons from './HeaderButtons';
 
 function Windows({
@@ -130,12 +131,14 @@ const Window = memo(function({
         />
       </header>
       <div className="app__content">
-        {component({
-          onClose: _onMouseUpClose,
-          onMinimize: _onMouseUpMinimize,
-          isFocus,
-          ...injectProps,
-        })}
+        <ErrorBoundary>
+          {component({
+            onClose: _onMouseUpClose,
+            onMinimize: _onMouseUpMinimize,
+            isFocus,
+            ...injectProps,
+          })}
+        </ErrorBoundary>
       </div>
     </div>
   );

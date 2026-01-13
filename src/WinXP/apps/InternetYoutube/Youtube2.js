@@ -1,14 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-
-
 const Youtube = () => {
-    const [state, setState] = useState({
-        route: 'main',
-        query: '',
-      });
-
     return(
     <div className="ie__content__inner">
         <Page>

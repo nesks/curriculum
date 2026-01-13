@@ -144,7 +144,7 @@ const StyledIcon = styled(Icon)`
     width: 30px;
     height: 30px;
     filter: ${({ isFocus, displayFocus }) =>
-      isFocus && displayFocus ? 'drop-shadow(0 0 blue)' : ''};
+      isFocus && displayFocus ? 'drop-shadow(2px 2px 1px blue)' : ''};
   }
   &__img {
     width: 30px;
