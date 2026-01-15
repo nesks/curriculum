@@ -141,6 +141,10 @@ const ContentWrapper = styled.div`
   display: flex;
   flex: 1;
   overflow: hidden;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
 `;
 
 const Sidebar = styled.div`
@@ -150,6 +154,13 @@ const Sidebar = styled.div`
   border-right: 2px solid #aca899;
   overflow-y: auto;
   padding: 10px;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    min-width: unset;
+    border-right: none;
+    border-bottom: 2px solid #aca899;
+  }
 `;
 
 const Section = styled.div`
@@ -244,6 +255,10 @@ const MainContent = styled.div`
   flex-direction: column;
   background: #808080;
   padding: 10px;
+
+  @media (max-width: 480px) {
+    padding: 15px;
+  }
 `;
 
 const IframeHeader = styled.div`
@@ -254,6 +269,13 @@ const IframeHeader = styled.div`
   padding: 6px 10px;
   border: 2px outset #c0c0c0;
   margin-bottom: 2px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 12px 10px;
+  }
 `;
 
 const IframeTitle = styled.span`
@@ -265,6 +287,11 @@ const IframeTitle = styled.span`
 const ButtonGroup = styled.div`
   display: flex;
   gap: 8px;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 const ActionButton = styled.button`
@@ -286,6 +313,11 @@ const ActionButton = styled.button`
   &:active {
     border-style: inset;
   }
+
+  @media (max-width: 480px) {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
 `;
 
 const IframeContainer = styled.div`
@@ -293,6 +325,10 @@ const IframeContainer = styled.div`
   border: 2px inset #808080;
   background: #ffffff;
   min-height: 300px;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const StyledIframe = styled.iframe`
@@ -312,6 +348,10 @@ const MinimizedBox = styled.div`
 
   &:hover {
     background: #e8e8e8;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
   }
 `;
 

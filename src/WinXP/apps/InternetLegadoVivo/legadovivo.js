@@ -398,12 +398,22 @@ const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 `;
 
 const LogoSection = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+
+  @media (max-width: 480px) {
+    justify-content: center;
+  }
 `;
 
 const LogoIcon = styled.div`
@@ -447,6 +457,10 @@ const ContentWrapper = styled.div`
   display: flex;
   flex: 1;
   overflow: hidden;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
 `;
 
 const Sidebar = styled.div`
@@ -456,6 +470,13 @@ const Sidebar = styled.div`
   border-right: 1px solid #d4a825;
   overflow-y: auto;
   padding: 0;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    min-width: unset;
+    border-right: none;
+    border-bottom: 1px solid #d4a825;
+  }
 `;
 
 const ProfileSection = styled.div`
@@ -599,12 +620,20 @@ const MainContent = styled.div`
   flex-direction: column;
   background: #0f0f1a;
   overflow: hidden;
+
+  @media (max-width: 480px) {
+    padding: 0;
+  }
 `;
 
 const TabsContainer = styled.div`
   display: flex;
   background: #16213e;
   border-bottom: 1px solid #d4a825;
+
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const Tab = styled.button`
@@ -621,6 +650,12 @@ const Tab = styled.button`
   &:hover {
     background: ${props => props.active ? 'linear-gradient(180deg, #d4a825 0%, #b8860b 100%)' : 'rgba(212, 168, 37, 0.1)'};
     color: ${props => props.active ? '#1a1a2e' : '#ffd700'};
+  }
+
+  @media (max-width: 480px) {
+    flex: 1;
+    text-align: center;
+    padding: 8px 10px;
   }
 `;
 
@@ -670,6 +705,10 @@ const FeatureGrid = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   margin-top: 15px;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const FeatureCard = styled.div`
@@ -701,6 +740,11 @@ const ButtonGroup = styled.div`
   display: flex;
   gap: 12px;
   margin-top: 25px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 const PrimaryButton = styled.button`
@@ -742,6 +786,10 @@ const TechDetailGrid = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   margin: 20px 0;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const TechDetailCard = styled.div`
@@ -801,6 +849,13 @@ const IframeHeader = styled.div`
   background: linear-gradient(180deg, #d4a825 0%, #b8860b 100%);
   padding: 8px 12px;
   border-radius: 4px 4px 0 0;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 12px;
+  }
 `;
 
 const IframeTitle = styled.span`
@@ -812,6 +867,12 @@ const IframeTitle = styled.span`
 const IframeButtonGroup = styled.div`
   display: flex;
   gap: 8px;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 `;
 
 const IframeButton = styled.button`
@@ -837,6 +898,10 @@ const IframeContainer = styled.div`
   border-top: none;
   background: #ffffff;
   min-height: 400px;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const StyledIframe = styled.iframe`
@@ -859,6 +924,10 @@ const MinimizedBox = styled.div`
 
   &:hover {
     background: #1a1a2e;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
   }
 `;
 
