@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Felipe S. Nunes - Currículo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 10pt;
+      line-height: 1.5;
+      color: #1a1a1a;
+      background: #fff;
+      padding: 40px 50px;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #1e40af;
+    }
+
+    .header h1 {
+      font-size: 28pt;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+    }
+
+    .header .title {
+      font-size: 12pt;
+      font-weight: 500;
+      color: #475569;
+      margin-bottom: 12px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 9pt;
+      color: #374151;
+    }
+
+    .contact-info a {
+      color: #1e40af;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #1e40af;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    /* Summary */
+    .summary {
+      font-size: 10pt;
+      color: #374151;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .skill-category {
+      margin-bottom: 8px;
+    }
+
+    .skill-category-title {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #1e40af;
+      margin-bottom: 4px;
+    }
+
+    .skill-list {
+      font-size: 9.5pt;
+      color: #374151;
+      line-height: 1.5;
+    }
+
+    /* Experience */
+    .experience-item {
+      margin-bottom: 16px;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .experience-company {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .experience-role {
+      font-size: 10pt;
+      font-weight: 500;
+      color: #1e40af;
+      font-style: italic;
+    }
+
+    .experience-period {
+      font-size: 9pt;
+      color: #6b7280;
+    }
+
+    .experience-description {
+      font-size: 9.5pt;
+      color: #374151;
+      margin-top: 4px;
+    }
+
+    .experience-list {
+      list-style: disc;
+      margin-left: 18px;
+      margin-top: 6px;
+    }
+
+    .experience-list li {
+      font-size: 9.5pt;
+      color: #374151;
+      margin-bottom: 3px;
+      line-height: 1.4;
+    }
+
+    /* Projects */
+    .project-item {
+      margin-bottom: 14px;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .project-name {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .project-type {
+      font-size: 9pt;
+      font-weight: 500;
+      color: #1e40af;
+      font-style: italic;
+    }
+
+    .project-description {
+      font-size: 9.5pt;
+      color: #374151;
+      margin-top: 4px;
+    }
+
+    .project-list {
+      list-style: disc;
+      margin-left: 18px;
+      margin-top: 6px;
+    }
+
+    .project-list li {
+      font-size: 9.5pt;
+      color: #374151;
+      margin-bottom: 3px;
+      line-height: 1.4;
+    }
+
+    .project-links {
+      font-size: 9pt;
+      margin-top: 4px;
+    }
+
+    .project-links a {
+      color: #1e40af;
+      text-decoration: none;
+    }
+
+    /* Education */
+    .education-item {
+      margin-bottom: 10px;
+    }
+
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .education-school {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .education-degree {
+      font-size: 9.5pt;
+      color: #1e40af;
+      font-style: italic;
+    }
+
+    .education-period {
+      font-size: 9pt;
+      color: #6b7280;
+    }
+
+    /* Two column layout for bottom sections */
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    /* Languages */
+    .languages {
+      font-size: 9.5pt;
+      color: #374151;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        padding: 20px 30px;
+      }
+
+      .section {
+        page-break-inside: avoid;
+      }
+    }
+
+    /* Highlight for AI keywords */
+    .highlight {
+      background-color: #dbeafe;
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>Felipe S. Nunes</h1>
+    <div class="title">Desenvolvedor Full-Stack | Inteligência Artificial & LLMs</div>
+    <div class="contact-info">
+      <span class="contact-item">Eldorado, Contagem - MG</span>
+      <span class="contact-item">(31) 99483-1043</span>
+      <span class="contact-item"><a href="mailto:dev.felipesnunes@gmail.com">dev.felipesnunes@gmail.com</a></span>
+      <span class="contact-item"><a href="https://www.felipenunes.info" target="_blank">felipenunes.info</a></span>
+      <span class="contact-item"><a href="https://github.com/nesks" target="_blank">github.com/nesks</a></span>
+      <span class="contact-item"><a href="https://www.linkedin.com/in/felipesnunes/" target="_blank">linkedin.com/in/felipesnunes</a></span>
+    </div>
+  </header>
+
+  <!-- Summary -->
+  <section class="section">
+    <h2 class="section-title">Resumo Profissional</h2>
+    <p class="summary">
+      Desenvolvedor Full-Stack com 4+ anos de experiência, especializado em integrações com <strong>Inteligência Artificial</strong> e <strong>LLMs</strong>.
+      Experiência prática com <strong>OpenAI</strong> (DALL-E 3, GPT), APIs de <strong>IA Generativa</strong> e desenvolvimento de produtos end-to-end.
+      Histórico comprovado em aplicações com milhares de usuários ativos em produção, incluindo apps publicados na App Store e Play Store.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section class="section">
+    <h2 class="section-title">Habilidades Técnicas</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <span class="skill-category-title">Inteligência Artificial & LLMs:</span>
+        <span class="skill-list">OpenAI API (DALL-E 3, GPT), IA Generativa (imagens, texto), Fashn AI (Computer Vision, Virtual Try-On), Integrações com APIs de LLMs</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-category-title">Backend:</span>
+        <span class="skill-list">Node.js, TypeScript, Laravel, PHP, APIs REST, Microservices, PostgreSQL, MySQL</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-category-title">Frontend & Mobile:</span>
+        <span class="skill-list">React.js, Vue.js, React Native, Expo, Three.js (3D), Ionic, Angular, TypeScript</span>
+      </div>
+      <div class="skill-category">
+        <span class="skill-category-title">DevOps & Infraestrutura:</span>
+        <span class="skill-list">Docker, CI/CD, Git, GitHub, Deploy App Store / Play Store, Ambientes Dev/Staging/Prod</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="section">
+    <h2 class="section-title">Experiência Profissional</h2>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-company">Camp Tecnologia</span>
+        <span class="experience-period">Outubro 2021 - Presente</span>
+      </div>
+      <div class="experience-role">Desenvolvedor Full-Stack Pleno</div>
+      <ul class="experience-list">
+        <li>Desenvolvimento e manutenção do app mobile Acampa com <strong>4.000+ usuários ativos diários</strong></li>
+        <li>Backend com Laravel (APIs e integrações) e microservices com Node.js</li>
+        <li>Frontend com Vue.js e React.js para painéis administrativos</li>
+        <li>App mobile com Ionic e Angular, publicado na iOS App Store e Android Play Store</li>
+        <li>Plataforma de pós-venda automotiva atendendo <strong>+400 concessionárias</strong> (Fiat, VW, Ford, Renault, Honda, Hyundai)</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-company">AvalPsico</span>
+        <span class="experience-period">Maio - Julho 2025</span>
+      </div>
+      <div class="experience-role">Desenvolvedor Freelancer</div>
+      <ul class="experience-list">
+        <li>Plataforma web de automação de testes psicológicos com <strong>500+ usuários</strong> e avaliação <strong>4.9/5</strong></li>
+        <li>Correção de bugs, melhoria de performance e otimização de queries SQL</li>
+        <li>Stack: Laravel, PHP, MySQL em arquitetura monolítica</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-company">MACON MRO</span>
+        <span class="experience-period">Junho - Dezembro 2020</span>
+      </div>
+      <div class="experience-role">Estágio em Desenvolvimento Web</div>
+      <ul class="experience-list">
+        <li>Controle do sistema web, layout e gestão de produtos</li>
+        <li>Marketing digital e criação de campanhas publicitárias</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-company">ManiBurger</span>
+        <span class="experience-period">Janeiro 2018 - Janeiro 2020</span>
+      </div>
+      <div class="experience-role">Sócio / Desenvolvedor</div>
+      <ul class="experience-list">
+        <li>Criação de ERP em Java 8 para gerenciamento de pedidos, rotas e financeiro</li>
+        <li>Coordenação de equipe para otimização de entregas e minimização de erros</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section">
+    <h2 class="section-title">Projetos Pessoais</h2>
+
+    <div class="project-item">
+      <div class="project-header">
+        <span class="project-name">Personalize sua Camisa</span>
+        <span class="project-type">Projeto com IA Generativa</span>
+      </div>
+      <ul class="project-list">
+        <li>Aplicação de personalização de camisetas em <strong>3D</strong> com integrações de <strong>Inteligência Artificial</strong></li>
+        <li><strong>OpenAI DALL-E 3</strong> para geração de estampas personalizadas por prompt de texto</li>
+        <li><strong>Fashn AI</strong> para virtual try-on (Computer Vision) - simular roupas em pessoas</li>
+        <li>Stack: React + Three.js (Frontend) / Node.js + Express + WebSocket (Backend)</li>
+        <li>Comunicação em tempo real com WebSocket para atualizações instantâneas</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://shirt-creater.vercel.app/" target="_blank">Demo: shirt-creater.vercel.app</a> |
+        <a href="https://github.com/nesks/shirtCreater" target="_blank">GitHub: github.com/nesks/shirtCreater</a>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-header">
+        <span class="project-name">Legado Vivo</span>
+        <span class="project-type">Projeto Sênior End-to-End (Em Produção)</span>
+      </div>
+      <ul class="project-list">
+        <li>App iOS publicado na <strong>App Store</strong> para registro e envio de mensagens para o futuro</li>
+        <li>Arquitetura completa: concepção, design, desenvolvimento, deploy e monetização</li>
+        <li>Stack: React Native + Expo + TypeScript (Mobile) / Node.js + TypeScript + PostgreSQL (Backend)</li>
+        <li>Infraestrutura: Docker, CI/CD automatizado, ambientes Dev/Staging/Produção</li>
+        <li>Sistema de créditos com gateway de pagamento, conformidade com LGPD</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://www.seulegadovivo.com.br/" target="_blank">Site: seulegadovivo.com.br</a> |
+        <a href="https://apps.apple.com/br/app/legado-vivo/id6756851315" target="_blank">App Store</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section">
+    <h2 class="section-title">Formação Acadêmica</h2>
+
+    <div class="education-item">
+      <div class="education-header">
+        <span class="education-school">Centro Universitário UNA - Contagem</span>
+        <span class="education-period">Julho - Dezembro 2023</span>
+      </div>
+      <div class="education-degree">Sistemas de Informação - Graduado</div>
+    </div>
+
+    <div class="education-item">
+      <div class="education-header">
+        <span class="education-school">Universidade Federal de Ouro Preto (UFOP) - João Monlevade</span>
+        <span class="education-period">Março 2016 - Dezembro 2021</span>
+      </div>
+      <div class="education-degree">Sistemas de Informação - Cursado (TCC pendente na época)</div>
+    </div>
+  </section>
+
+  <!-- Bottom sections -->
+  <div class="two-columns">
+    <section class="section">
+      <h2 class="section-title">Soft Skills</h2>
+      <ul class="experience-list">
+        <li>Visão crítica e analítica</li>
+        <li>Liderança e coordenação de equipes</li>
+        <li>Arquitetura de sistemas</li>
+        <li>Visão de produto (conceito à produção)</li>
+        <li>Empreendedorismo</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Idiomas</h2>
+      <div class="languages">
+        <p><strong>Português:</strong> Nativo</p>
+        <p><strong>Inglês:</strong> Intermediário (leitura técnica avançada)</p>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
